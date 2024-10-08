@@ -13,4 +13,3 @@ The user can create balance objects and add transactions. The value in a transac
 The balance can be plotted in a desired interval.
 
 ![screenshot](images/0000.png)
-<p>Balance plot of a quartal<p>
