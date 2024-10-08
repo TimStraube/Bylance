@@ -2,7 +2,7 @@
 
 ## Target
 
-Development of a simple program for modelling financial balances.
+Creation of a simple yet powerful program for modelling financial balances.
 
 ## Key features
 
