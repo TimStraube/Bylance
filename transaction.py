@@ -36,11 +36,18 @@ class Transaction():
         interval):
         """Calculate the days of the transaction
         """
-        current_date = day_start
-        while current_date <= day_end:
-            self.days.append(current_date)
+        current_day = day_start
+        while current_day < day_end:
             if interval == "monthly":
-                next_month = current_date.month + 1 if current_date.month < 12 else 1
-                next_year = current_date.year if current_date.month < 12 else current_date.year + 1
-                current_date = current_date.replace(month=next_month, year=next_year)
+                if current_day.month < 12:
+                    next_month = current_day.month + 1  
+                    next_year = current_day.year
+                else: 
+                    next_month = 1
+                    next_year = current_day.year + 1
+                current_day = current_day.replace(
+                    month=next_month, 
+                    year=next_year
+                )
+                self.days.append(current_day)
     

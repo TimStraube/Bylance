@@ -17,7 +17,7 @@ class Balance():
         self.balance = self.balance_initial
         for transaction in self.transactions:
             for day in transaction.days: 
-                if day < day_balance:
+                if day <= day_balance:
                     self.balance += transaction.value
 
         return self.balance
@@ -48,40 +48,26 @@ class Balance():
         plt.show()
 
 if "__main__" == __name__:
-    balance_bob = Balance(200)
+    balance_bob = Balance(500)
     balance_bob.add(
         Transaction(
-            "Computer",
-            -425.00, 
-            datetime.datetime(2024, 1, 5)
-        )
-    )
-    balance_bob.add(
-        Transaction(
-            "Gift",
-            1000.00, 
-            datetime.datetime(2024, 1, 10)
-        )
-    )
-    balance_bob.add(
-        Transaction(
-            "Power",
-            -220.00,
-            datetime.datetime(2024, 2, 10),
-            datetime.datetime(2024, 3, 10),
+            "Rent",
+            -1.00, 
+            datetime.datetime(2024, 11, 1),
+            datetime.datetime(2025, 12, 1),
             "monthly"
         )
     )
     balance_bob.add(
         Transaction(
-            "Profit",
-            +49.50,
-            datetime.datetime(2024, 1, 1),
-            datetime.datetime(2024, 3, 31),
+            "Income",
+            10000000.00, 
+            datetime.datetime(2024, 11, 1),
+            datetime.datetime(2025, 12, 1),
             "monthly"
         )
     )
     balance_bob.plot(
-        datetime.datetime(2024, 1, 1),
-        datetime.datetime(2024, 3, 31)
+        datetime.datetime(2024, 11, 1),
+        datetime.datetime(2025, 6, 1)
     )
