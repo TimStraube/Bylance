@@ -49,24 +49,6 @@ class Balance():
 
 if "__main__" == __name__:
     balance_bob = Balance(500)
-    balance_bob.add(
-        Transaction(
-            "Rent",
-            -1.00, 
-            datetime.datetime(2024, 11, 1),
-            datetime.datetime(2025, 12, 1),
-            "monthly"
-        )
-    )
-    balance_bob.add(
-        Transaction(
-            "Income",
-            10000000.00, 
-            datetime.datetime(2024, 11, 1),
-            datetime.datetime(2025, 12, 1),
-            "monthly"
-        )
-    )
     balance_bob.plot(
         datetime.datetime(2024, 11, 1),
         datetime.datetime(2025, 6, 1)
